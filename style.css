@@ -2,91 +2,163 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
-    background-color: #ffffff; /* White background like the mockup */
-    color: #333333; /* Dark grey text */
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    background-image: url('Mavic3E.jpg'); /* <<--- ADD YOUR BACKGROUND IMAGE URL HERE */
+    background-size: cover; /* Cover the entire page */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Keep background fixed during scroll (optional) */
+    position: relative; /* Needed for the overlay positioning */
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensure content is centered vertically */
-    text-align: center;
+    flex-direction: column; /* Stack header, main, footer vertically */
 }
 
-/* Container for the content */
-.container {
-    max-width: 600px;
-    padding: 20px;
+/* Background Overlay */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.60); /* White overlay with 85% opacity */
+    /* Adjust opacity (0.0 to 1.0) if text is hard to read */
+    z-index: 1; /* Place overlay between background and content */
 }
 
-/* Optional Logo Styling */
-/*
+/* Header Styling */
+.site-header {
+    padding: 20px 40px; /* Add some padding */
+    position: relative; /* Ensure header is above overlay */
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
 .logo {
-    max-width: 200px;
-    margin-bottom: 30px;
+    max-height: 120px; /* Adjust based on your logo's dimensions */
+    width: auto;
 }
-*/
+
+/* Main Content Container */
+.content-container {
+    flex-grow: 1; /* Allow main content to take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: 40px 20px;
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+    max-width: 700px; /* Limit content width */
+    margin: 0 auto; /* Center container horizontally */
+}
 
 /* Heading Styling */
 h1 {
-    font-size: 2.5em; /* Large heading */
-    color: #1A1A1A; /* Slightly darker text for heading */
+    font-size: 2.8em;
+    color: #1A1A1A;
     margin-bottom: 10px;
-    font-weight: 700; /* Bolder weight */
+    font-weight: 700;
 }
 
 /* Subtitle Styling */
 .subtitle {
-    font-size: 1.2em;
-    color: #555555; /* Slightly lighter grey */
+    font-size: 1.3em;
+    color: #555555;
     margin-bottom: 5px;
 }
 
 /* New Name Styling */
 .new-name {
-    font-size: 2.8em; /* Make the new name stand out */
+    font-size: 3.5em;
     color: #1A1A1A;
     font-weight: 700;
-    margin-bottom: 20px;
-    /* Optional: Add a subtle touch of the accent color */
-    /* border-bottom: 3px solid #4DBDBB; */
+    margin-bottom: 25px;
+    /* Optional: Add accent color - uncomment if desired */
+    /* border-bottom: 4px solid #4DBDBB; */
     /* display: inline-block; */
-    /* padding-bottom: 5px; */
+    /* padding-bottom: 8px; */
 }
 
 /* General Paragraph Styling */
 p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 25px;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
 /* Button Styling (Matching Mockup) */
 .button {
     display: inline-block;
     background-color: #4DBDBB; /* Teal accent color */
-    color: #ffffff; /* White text */
-    padding: 12px 25px;
-    text-decoration: none; /* Remove underline from link */
-    border-radius: 5px; /* Slightly rounded corners */
-    font-weight: 700; /* Bold text */
-    font-size: 1em;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    border: none; /* Remove default border */
+    color: #ffffff;
+    padding: 15px 35px; /* Slightly larger padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    border: none;
     cursor: pointer;
 }
 
-/* Button Hover Effect */
 .button:hover {
-    background-color: #3aa9a7; /* Slightly darker teal on hover */
+    background-color: #3aa9a7; /* Slightly darker teal */
+}
+
+/* Footer Styling */
+.site-footer-bottom {
+    background-color: #1A1A1A; /* Dark footer background like mockup */
+    color: #cccccc; /* Light grey text color */
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    position: relative; /* Ensure footer is above overlay */
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.site-footer-bottom p {
+    margin: 0; /* Remove default paragraph margin */
+    color: #cccccc; /* Ensure footer text color */
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .site-header {
+        padding: 15px 20px;
+        text-align: center; /* Center logo on smaller screens */
+    }
+    .logo {
+        max-height: 35px;
+    }
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
+    }
+    .new-name {
+        font-size: 2.8em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+     h1 {
+        font-size: 1.8em;
     }
     .new-name {
         font-size: 2.2em;
+    }
+     .subtitle {
+        font-size: 1.1em;
     }
     p {
         font-size: 0.9em;
@@ -94,5 +166,8 @@ p {
     .button {
         padding: 10px 20px;
         font-size: 0.9em;
+    }
+    .site-footer-bottom {
+        font-size: 0.8em;
     }
 }
