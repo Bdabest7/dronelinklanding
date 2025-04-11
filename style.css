@@ -1,0 +1,98 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    background-color: #ffffff; /* White background like the mockup */
+    color: #333333; /* Dark grey text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure content is centered vertically */
+    text-align: center;
+}
+
+/* Container for the content */
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Optional Logo Styling */
+/*
+.logo {
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+*/
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5em; /* Large heading */
+    color: #1A1A1A; /* Slightly darker text for heading */
+    margin-bottom: 10px;
+    font-weight: 700; /* Bolder weight */
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-size: 1.2em;
+    color: #555555; /* Slightly lighter grey */
+    margin-bottom: 5px;
+}
+
+/* New Name Styling */
+.new-name {
+    font-size: 2.8em; /* Make the new name stand out */
+    color: #1A1A1A;
+    font-weight: 700;
+    margin-bottom: 20px;
+    /* Optional: Add a subtle touch of the accent color */
+    /* border-bottom: 3px solid #4DBDBB; */
+    /* display: inline-block; */
+    /* padding-bottom: 5px; */
+}
+
+/* General Paragraph Styling */
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Button Styling (Matching Mockup) */
+.button {
+    display: inline-block;
+    background-color: #4DBDBB; /* Teal accent color */
+    color: #ffffff; /* White text */
+    padding: 12px 25px;
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-weight: 700; /* Bold text */
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    border: none; /* Remove default border */
+    cursor: pointer;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #3aa9a7; /* Slightly darker teal on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .new-name {
+        font-size: 2.2em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
