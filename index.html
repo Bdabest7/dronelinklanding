@@ -10,12 +10,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div class="background-overlay"></div> <header class="site-header">
+        <img src="DroneLinkStackedContour.png" alt="SimpliFly Logo" class="logo">
+         </header>
+
+    <main class="content-container">
         <h1>We've Moved!</h1>
         <p class="subtitle">Drone Link is now</p>
         <p class="new-name">SimpliFly</p>
-        <p>Our website has a new home and a new name.</p>
+        <p>Our website has a new home and a new name. Click below to visit our new site.</p>
         <a href="https://simp-li-fly.com" class="button">Visit SimpliFly</a>
-        </div>
+        </main>
+
+    <footer class="site-footer-bottom">
+        <p>&copy; <span id="current-year"></span> SimpliFly. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
